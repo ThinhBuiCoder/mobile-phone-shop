@@ -1,0 +1,1220 @@
+[
+  {
+    "model": "iPhone 13",
+    "series": "iPhone 13",
+    "type": "Standard",
+    "chip": "A15 Bionic",
+    "display": "6.1-inch Super Retina XDR",
+    "camera": "12MP Dual Camera System",
+    "description": "iPhone 13 with A15 Bionic chip, cinematic mode, and improved battery life.",
+    "mainImage": "https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2021_9_15_637673230236322511_iphone-13-mini-trang-1.jpg",
+    "variants": [
+      {
+        "sku": "IP13-128-PINK-NEW",
+        "color": "Pink",
+        "colorHex": "#FAD2D1",
+        "storage": "128GB",
+        "condition": "New",
+        "price": 599,
+        "stock": 25,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2021_9_15_637673230236166189_iphone-13-mini-hong-1.jpg"]
+      },
+      {
+        "sku": "IP13-256-PINK-NEW",
+        "color": "Pink",
+        "colorHex": "#FAD2D1",
+        "storage": "256GB",
+        "condition": "New",
+        "price": 699,
+        "stock": 20,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2021_9_15_637673230236166189_iphone-13-mini-hong-1.jpg"]
+      },
+      {
+        "sku": "IP13-512-PINK-NEW",
+        "color": "Pink",
+        "colorHex": "#FAD2D1",
+        "storage": "512GB",
+        "condition": "New",
+        "price": 799,
+        "stock": 15,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2021_9_15_637673230236166189_iphone-13-mini-hong-1.jpg"]
+      },
+      {
+        "sku": "IP13-128-BLUE-NEW",
+        "color": "Blue",
+        "colorHex": "#A7C5EB",
+        "storage": "128GB",
+        "condition": "New",
+        "price": 599,
+        "stock": 22,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2021_9_15_637673230237572519_iphone-13-mini-xanh-1.jpg"]
+      },
+      {
+        "sku": "IP13-256-BLUE-NEW",
+        "color": "Blue",
+        "colorHex": "#A7C5EB",
+        "storage": "256GB",
+        "condition": "New",
+        "price": 699,
+        "stock": 18,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2021_9_15_637673230237572519_iphone-13-mini-xanh-1.jpg"]
+      },
+      {
+        "sku": "IP13-512-BLUE-NEW",
+        "color": "Blue",
+        "colorHex": "#A7C5EB",
+        "storage": "512GB",
+        "condition": "New",
+        "price": 799,
+        "stock": 12,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2021_9_15_637673230237572519_iphone-13-mini-xanh-1.jpg"]
+      },
+      {
+        "sku": "IP13-128-MID-NEW",
+        "color": "Midnight",
+        "colorHex": "#1C1C1E",
+        "storage": "128GB",
+        "condition": "New",
+        "price": 599,
+        "stock": 30,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2021_9_15_637673230231791121_iphone-13-mini-den-1.jpg"]
+      },
+      {
+        "sku": "IP13-256-MID-NEW",
+        "color": "Midnight",
+        "colorHex": "#1C1C1E",
+        "storage": "256GB",
+        "condition": "New",
+        "price": 699,
+        "stock": 25,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2021_9_15_637673230231791121_iphone-13-mini-den-1.jpg"]
+      },
+      {
+        "sku": "IP13-512-MID-NEW",
+        "color": "Midnight",
+        "colorHex": "#1C1C1E",
+        "storage": "512GB",
+        "condition": "New",
+        "price": 799,
+        "stock": 20,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2021_9_15_637673230231791121_iphone-13-mini-den-1.jpg"]
+      },
+      {
+        "sku": "IP13-128-STAR-NEW",
+        "color": "Starlight",
+        "colorHex": "#FAF7F0",
+        "storage": "128GB",
+        "condition": "New",
+        "price": 599,
+        "stock": 28,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2021_9_15_637673230236322511_iphone-13-mini-trang-1.jpg"]
+      },
+      {
+        "sku": "IP13-256-STAR-NEW",
+        "color": "Starlight",
+        "colorHex": "#FAF7F0",
+        "storage": "256GB",
+        "condition": "New",
+        "price": 699,
+        "stock": 22,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2021_9_15_637673230236322511_iphone-13-mini-trang-1.jpg"]
+      },
+      {
+        "sku": "IP13-512-STAR-NEW",
+        "color": "Starlight",
+        "colorHex": "#FAF7F0",
+        "storage": "512GB",
+        "condition": "New",
+        "price": 799,
+        "stock": 18,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2021_9_15_637673230236322511_iphone-13-mini-trang-1.jpg"]
+      },
+      {
+        "sku": "IP13-128-RED-NEW",
+        "color": "Red",
+        "colorHex": "#BA0C2E",
+        "storage": "128GB",
+        "condition": "New",
+        "price": 599,
+        "stock": 20,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2021_9_15_637673230232103636_iphone-13-mini-do-1.jpg"]
+      },
+      {
+        "sku": "IP13-256-RED-NEW",
+        "color": "Red",
+        "colorHex": "#BA0C2E",
+        "storage": "256GB",
+        "condition": "New",
+        "price": 699,
+        "stock": 15,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2021_9_15_637673230232103636_iphone-13-mini-do-1.jpg"]
+      },
+      {
+        "sku": "IP13-512-RED-NEW",
+        "color": "Red",
+        "colorHex": "#BA0C2E",
+        "storage": "512GB",
+        "condition": "New",
+        "price": 799,
+        "stock": 10,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2021_9_15_637673230232103636_iphone-13-mini-do-1.jpg"]
+      }
+    ]
+  },
+  {
+    "model": "iPhone 14",
+    "series": "iPhone 14",
+    "type": "Standard",
+    "chip": "A15 Bionic",
+    "display": "6.1-inch Super Retina XDR",
+    "camera": "12MP Dual Camera with Photonic Engine",
+    "description": "iPhone 14 with improved cameras, Crash Detection, and Emergency SOS via satellite.",
+    "mainImage": "https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2022_11_30_638054092490170033_ip-14-xanh-1.jpg",
+    "variants": [
+      {
+        "sku": "IP14-128-PURPLE-NEW",
+        "color": "Purple",
+        "colorHex": "#E3D7ED",
+        "storage": "128GB",
+        "condition": "New",
+        "price": 699,
+        "stock": 25,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2022_11_30_638054090260153672_ip-14-tim-1.jpg"]
+      },
+      {
+        "sku": "IP14-256-PURPLE-NEW",
+        "color": "Purple",
+        "colorHex": "#E3D7ED",
+        "storage": "256GB",
+        "condition": "New",
+        "price": 799,
+        "stock": 20,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2022_11_30_638054090260153672_ip-14-tim-1.jpg"]
+      },
+      {
+        "sku": "IP14-512-PURPLE-NEW",
+        "color": "Purple",
+        "colorHex": "#E3D7ED",
+        "storage": "512GB",
+        "condition": "New",
+        "price": 999,
+        "stock": 15,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2022_11_30_638054090260153672_ip-14-tim-1.jpg"]
+      },
+      {
+        "sku": "IP14-128-MID-NEW",
+        "color": "Midnight",
+        "colorHex": "#1C1C1E",
+        "storage": "128GB",
+        "condition": "New",
+        "price": 699,
+        "stock": 30,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2022_11_30_638054086797665958_ip-14-den-1.jpg"]
+      },
+      {
+        "sku": "IP14-256-MID-NEW",
+        "color": "Midnight",
+        "colorHex": "#1C1C1E",
+        "storage": "256GB",
+        "condition": "New",
+        "price": 799,
+        "stock": 28,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2022_11_30_638054086797665958_ip-14-den-1.jpg"]
+      },
+      {
+        "sku": "IP14-512-MID-NEW",
+        "color": "Midnight",
+        "colorHex": "#1C1C1E",
+        "storage": "512GB",
+        "condition": "New",
+        "price": 999,
+        "stock": 22,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2022_11_30_638054086797665958_ip-14-den-1.jpg"]
+      },
+      {
+        "sku": "IP14-128-STAR-NEW",
+        "color": "Starlight",
+        "colorHex": "#F9F6EF",
+        "storage": "128GB",
+        "condition": "New",
+        "price": 699,
+        "stock": 28,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2022_11_30_638054091427671235_ip-14-trang-1.jpg"]
+      },
+      {
+        "sku": "IP14-256-STAR-NEW",
+        "color": "Starlight",
+        "colorHex": "#F9F6EF",
+        "storage": "256GB",
+        "condition": "New",
+        "price": 799,
+        "stock": 25,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2022_11_30_638054091427671235_ip-14-trang-1.jpg"]
+      },
+      {
+        "sku": "IP14-512-STAR-NEW",
+        "color": "Starlight",
+        "colorHex": "#F9F6EF",
+        "storage": "512GB",
+        "condition": "New",
+        "price": 999,
+        "stock": 20,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2022_11_30_638054091427671235_ip-14-trang-1.jpg"]
+      },
+      {
+        "sku": "IP14-128-BLUE-NEW",
+        "color": "Blue",
+        "colorHex": "#A7C7E7",
+        "storage": "128GB",
+        "condition": "New",
+        "price": 699,
+        "stock": 22,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2022_11_30_638054092490170033_ip-14-xanh-1.jpg"]
+      },
+      {
+        "sku": "IP14-256-BLUE-NEW",
+        "color": "Blue",
+        "colorHex": "#A7C7E7",
+        "storage": "256GB",
+        "condition": "New",
+        "price": 799,
+        "stock": 18,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2022_11_30_638054092490170033_ip-14-xanh-1.jpg"]
+      },
+      {
+        "sku": "IP14-512-BLUE-NEW",
+        "color": "Blue",
+        "colorHex": "#A7C7E7",
+        "storage": "512GB",
+        "condition": "New",
+        "price": 999,
+        "stock": 14,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2022_11_30_638054092490170033_ip-14-xanh-1.jpg"]
+      },
+      {
+        "sku": "IP14-128-RED-NEW",
+        "color": "Red",
+        "colorHex": "#D82F30",
+        "storage": "128GB",
+        "condition": "New",
+        "price": 699,
+        "stock": 20,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2022_11_30_638054088819837718_ip-14-do-1.jpg"]
+      },
+      {
+        "sku": "IP14-256-RED-NEW",
+        "color": "Red",
+        "colorHex": "#D82F30",
+        "storage": "256GB",
+        "condition": "New",
+        "price": 799,
+        "stock": 16,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2022_11_30_638054088819837718_ip-14-do-1.jpg"]
+      },
+      {
+        "sku": "IP14-512-RED-NEW",
+        "color": "Red",
+        "colorHex": "#D82F30",
+        "storage": "512GB",
+        "condition": "New",
+        "price": 999,
+        "stock": 12,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2022_11_30_638054088819837718_ip-14-do-1.jpg"]
+      }
+    ]
+  },
+  {
+    "model": "iPhone 15",
+    "series": "iPhone 15",
+    "type": "Standard",
+    "chip": "A16 Bionic",
+    "display": "6.1-inch Super Retina XDR",
+    "camera": "48MP Main + 12MP Ultra Wide",
+    "description": "iPhone 15 features Dynamic Island, 48MP camera, and USB-C connectivity.",
+    "mainImage": "https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2023_9_15_638303935769505085_iphone-15-xanh-1.jpg",
+    "variants": [
+      {
+        "sku": "IP15-128-PINK-NEW",
+        "color": "Pink",
+        "colorHex": "#F4C2C2",
+        "storage": "128GB",
+        "condition": "New",
+        "price": 799,
+        "stock": 20,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2023_9_15_638303942321093007_iphone-15-hong-1.jpg"]
+      },
+      {
+        "sku": "IP15-256-PINK-NEW",
+        "color": "Pink",
+        "colorHex": "#F4C2C2",
+        "storage": "256GB",
+        "condition": "New",
+        "price": 899,
+        "stock": 18,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2023_9_15_638303942321093007_iphone-15-hong-1.jpg"]
+      },
+      {
+        "sku": "IP15-512-PINK-NEW",
+        "color": "Pink",
+        "colorHex": "#F4C2C2",
+        "storage": "512GB",
+        "condition": "New",
+        "price": 1099,
+        "stock": 14,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2023_9_15_638303942321093007_iphone-15-hong-1.jpg"]
+      },
+      {
+        "sku": "IP15-128-BLUE-NEW",
+        "color": "Blue",
+        "colorHex": "#A7C7E7",
+        "storage": "128GB",
+        "condition": "New",
+        "price": 799,
+        "stock": 22,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2023_9_15_638303935769505085_iphone-15-xanh-1.jpg"]
+      },
+      {
+        "sku": "IP15-256-BLUE-NEW",
+        "color": "Blue",
+        "colorHex": "#A7C7E7",
+        "storage": "256GB",
+        "condition": "New",
+        "price": 899,
+        "stock": 20,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2023_9_15_638303935769505085_iphone-15-xanh-1.jpg"]
+      },
+      {
+        "sku": "IP15-512-BLUE-NEW",
+        "color": "Blue",
+        "colorHex": "#A7C7E7",
+        "storage": "512GB",
+        "condition": "New",
+        "price": 1099,
+        "stock": 16,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2023_9_15_638303935769505085_iphone-15-xanh-1.jpg"]
+      },
+      {
+        "sku": "IP15-128-YEL-NEW",
+        "color": "Yellow",
+        "colorHex": "#F9E79F",
+        "storage": "128GB",
+        "condition": "New",
+        "price": 799,
+        "stock": 18,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2023_9_15_638303944832321476_iphone-15-vang-1.jpg"]
+      },
+      {
+        "sku": "IP15-256-YEL-NEW",
+        "color": "Yellow",
+        "colorHex": "#F9E79F",
+        "storage": "256GB",
+        "condition": "New",
+        "price": 899,
+        "stock": 15,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2023_9_15_638303944832321476_iphone-15-vang-1.jpg"]
+      },
+      {
+        "sku": "IP15-512-YEL-NEW",
+        "color": "Yellow",
+        "colorHex": "#F9E79F",
+        "storage": "512GB",
+        "condition": "New",
+        "price": 1099,
+        "stock": 12,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2023_9_15_638303944832321476_iphone-15-vang-1.jpg"]
+      },
+      {
+        "sku": "IP15-128-GRN-NEW",
+        "color": "Green",
+        "colorHex": "#A8E6CF",
+        "storage": "128GB",
+        "condition": "New",
+        "price": 799,
+        "stock": 16,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2023_9_15_638303950417112947_iphone-15-xanh-la-1.jpg"]
+      },
+      {
+        "sku": "IP15-256-GRN-NEW",
+        "color": "Green",
+        "colorHex": "#A8E6CF",
+        "storage": "256GB",
+        "condition": "New",
+        "price": 899,
+        "stock": 14,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2023_9_15_638303950417112947_iphone-15-xanh-la-1.jpg"]
+      },
+      {
+        "sku": "IP15-512-GRN-NEW",
+        "color": "Green",
+        "colorHex": "#A8E6CF",
+        "storage": "512GB",
+        "condition": "New",
+        "price": 1099,
+        "stock": 10,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2023_9_15_638303950417112947_iphone-15-xanh-la-1.jpg"]
+      },
+      {
+        "sku": "IP15-128-BLK-NEW",
+        "color": "Black",
+        "colorHex": "#000000",
+        "storage": "128GB",
+        "condition": "New",
+        "price": 799,
+        "stock": 25,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2023_9_15_638303947975273507_iphone-15-den-1.jpg"]
+      },
+      {
+        "sku": "IP15-256-BLK-NEW",
+        "color": "Black",
+        "colorHex": "#000000",
+        "storage": "256GB",
+        "condition": "New",
+        "price": 899,
+        "stock": 22,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2023_9_15_638303947975273507_iphone-15-den-1.jpg"]
+      },
+      {
+        "sku": "IP15-512-BLK-NEW",
+        "color": "Black",
+        "colorHex": "#000000",
+        "storage": "512GB",
+        "condition": "New",
+        "price": 1099,
+        "stock": 18,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/2023_9_15_638303947975273507_iphone-15-den-1.jpg"]
+      }
+    ]
+  },
+  {
+    "model": "iPhone 16",
+    "series": "iPhone 16",
+    "type": "Standard",
+    "chip": "A18",
+    "display": "6.1-inch Super Retina XDR",
+    "camera": "48MP Fusion + 12MP Ultra Wide",
+    "description": "iPhone 16 with Camera Control, A18 chip, and enhanced battery life.",
+    "mainImage": "https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_teal_09fe254c00.png",
+    "variants": [
+      {
+        "sku": "IP16-128-BLK-NEW",
+        "color": "Black",
+        "colorHex": "#000000",
+        "storage": "128GB",
+        "condition": "New",
+        "price": 799,
+        "stock": 30,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_black_fe52c5d947.png"]
+      },
+      {
+        "sku": "IP16-256-BLK-NEW",
+        "color": "Black",
+        "colorHex": "#000000",
+        "storage": "256GB",
+        "condition": "New",
+        "price": 899,
+        "stock": 28,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_black_fe52c5d947.png"]
+      },
+      {
+        "sku": "IP16-512-BLK-NEW",
+        "color": "Black",
+        "colorHex": "#000000",
+        "storage": "512GB",
+        "condition": "New",
+        "price": 1099,
+        "stock": 22,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_black_fe52c5d947.png"]
+      },
+      {
+        "sku": "IP16-128-ULT-NEW",
+        "color": "Ultramarine",
+        "colorHex": "#120A8F",
+        "storage": "128GB",
+        "condition": "New",
+        "price": 799,
+        "stock": 25,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_ultramarine_523066aa94.png"]
+      },
+      {
+        "sku": "IP16-256-ULT-NEW",
+        "color": "Ultramarine",
+        "colorHex": "#120A8F",
+        "storage": "256GB",
+        "condition": "New",
+        "price": 899,
+        "stock": 22,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_ultramarine_523066aa94.png"]
+      },
+      {
+        "sku": "IP16-512-ULT-NEW",
+        "color": "Ultramarine",
+        "colorHex": "#120A8F",
+        "storage": "512GB",
+        "condition": "New",
+        "price": 1099,
+        "stock": 18,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_ultramarine_523066aa94.png"]
+      },
+      {
+        "sku": "IP16-128-TEAL-NEW",
+        "color": "Teal",
+        "colorHex": "#008080",
+        "storage": "128GB",
+        "condition": "New",
+        "price": 799,
+        "stock": 22,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_teal_09fe254c00.png"]
+      },
+      {
+        "sku": "IP16-256-TEAL-NEW",
+        "color": "Teal",
+        "colorHex": "#008080",
+        "storage": "256GB",
+        "condition": "New",
+        "price": 899,
+        "stock": 20,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_teal_09fe254c00.png"]
+      },
+      {
+        "sku": "IP16-512-TEAL-NEW",
+        "color": "Teal",
+        "colorHex": "#008080",
+        "storage": "512GB",
+        "condition": "New",
+        "price": 1099,
+        "stock": 16,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_teal_09fe254c00.png"]
+      },
+      {
+        "sku": "IP16-128-PINK-NEW",
+        "color": "Pink",
+        "colorHex": "#FFB6C1",
+        "storage": "128GB",
+        "condition": "New",
+        "price": 799,
+        "stock": 20,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_pink_23227ae794.png"]
+      },
+      {
+        "sku": "IP16-256-PINK-NEW",
+        "color": "Pink",
+        "colorHex": "#FFB6C1",
+        "storage": "256GB",
+        "condition": "New",
+        "price": 899,
+        "stock": 18,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_pink_23227ae794.png"]
+      },
+      {
+        "sku": "IP16-512-PINK-NEW",
+        "color": "Pink",
+        "colorHex": "#FFB6C1",
+        "storage": "512GB",
+        "condition": "New",
+        "price": 1099,
+        "stock": 14,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_pink_23227ae794.png"]
+      },
+      {
+        "sku": "IP16-128-WHT-NEW",
+        "color": "White",
+        "colorHex": "#FFFFFF",
+        "storage": "128GB",
+        "condition": "New",
+        "price": 799,
+        "stock": 26,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_white_9eac5c03e3.png"]
+      },
+      {
+        "sku": "IP16-256-WHT-NEW",
+        "color": "White",
+        "colorHex": "#FFFFFF",
+        "storage": "256GB",
+        "condition": "New",
+        "price": 899,
+        "stock": 24,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_white_9eac5c03e3.png"]
+      },
+      {
+        "sku": "IP16-512-WHT-NEW",
+        "color": "White",
+        "colorHex": "#FFFFFF",
+        "storage": "512GB",
+        "condition": "New",
+        "price": 1099,
+        "stock": 20,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_white_9eac5c03e3.png"]
+      }
+    ]
+  },
+  {
+    "model": "iPhone 16 Plus",
+    "series": "iPhone 16",
+    "type": "Plus",
+    "chip": "A18",
+    "display": "6.7-inch Super Retina XDR",
+    "camera": "48MP Fusion + 12MP Ultra Wide",
+    "description": "iPhone 16 Plus with larger display and all-day battery.",
+    "mainImage": "https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_plus_ultramarine_0ef73cdfa7.png",
+    "variants": [
+      {
+        "sku": "IP16PL-128-BLK-NEW",
+        "color": "Black",
+        "colorHex": "#000000",
+        "storage": "128GB",
+        "condition": "New",
+        "price": 899,
+        "stock": 25,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_plus_black_37a9bceca0.png"]
+      },
+      {
+        "sku": "IP16PL-256-BLK-NEW",
+        "color": "Black",
+        "colorHex": "#000000",
+        "storage": "256GB",
+        "condition": "New",
+        "price": 999,
+        "stock": 22,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_plus_black_37a9bceca0.png"]
+      },
+      {
+        "sku": "IP16PL-512-BLK-NEW",
+        "color": "Black",
+        "colorHex": "#000000",
+        "storage": "512GB",
+        "condition": "New",
+        "price": 1199,
+        "stock": 18,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_plus_black_37a9bceca0.png"]
+      },
+      {
+        "sku": "IP16PL-128-ULT-NEW",
+        "color": "Ultramarine",
+        "colorHex": "#120A8F",
+        "storage": "128GB",
+        "condition": "New",
+        "price": 899,
+        "stock": 20,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_plus_ultramarine_0ef73cdfa7.png"]
+      },
+      {
+        "sku": "IP16PL-256-ULT-NEW",
+        "color": "Ultramarine",
+        "colorHex": "#120A8F",
+        "storage": "256GB",
+        "condition": "New",
+        "price": 999,
+        "stock": 18,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_plus_ultramarine_0ef73cdfa7.png"]
+      },
+      {
+        "sku": "IP16PL-512-ULT-NEW",
+        "color": "Ultramarine",
+        "colorHex": "#120A8F",
+        "storage": "512GB",
+        "condition": "New",
+        "price": 1199,
+        "stock": 14,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_plus_ultramarine_0ef73cdfa7.png"]
+      },
+      {
+        "sku": "IP16PL-128-TEAL-NEW",
+        "color": "Teal",
+        "colorHex": "#008080",
+        "storage": "128GB",
+        "condition": "New",
+        "price": 899,
+        "stock": 18,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_plus_teal_47d97763c1.png"]
+      },
+      {
+        "sku": "IP16PL-256-TEAL-NEW",
+        "color": "Teal",
+        "colorHex": "#008080",
+        "storage": "256GB",
+        "condition": "New",
+        "price": 999,
+        "stock": 16,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_plus_teal_47d97763c1.png"]
+      },
+      {
+        "sku": "IP16PL-512-TEAL-NEW",
+        "color": "Teal",
+        "colorHex": "#008080",
+        "storage": "512GB",
+        "condition": "New",
+        "price": 1199,
+        "stock": 12,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_plus_teal_47d97763c1.png"]
+      },
+      {
+        "sku": "IP16PL-128-PINK-NEW",
+        "color": "Pink",
+        "colorHex": "#FFB6C1",
+        "storage": "128GB",
+        "condition": "New",
+        "price": 899,
+        "stock": 16,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_plus_pink_9ea3233dfe.png"]
+      },
+      {
+        "sku": "IP16PL-256-PINK-NEW",
+        "color": "Pink",
+        "colorHex": "#FFB6C1",
+        "storage": "256GB",
+        "condition": "New",
+        "price": 999,
+        "stock": 14,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_plus_pink_9ea3233dfe.png"]
+      },
+      {
+        "sku": "IP16PL-512-PINK-NEW",
+        "color": "Pink",
+        "colorHex": "#FFB6C1",
+        "storage": "512GB",
+        "condition": "New",
+        "price": 1199,
+        "stock": 10,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_plus_pink_9ea3233dfe.png"]
+      },
+      {
+        "sku": "IP16PL-128-WHT-NEW",
+        "color": "White",
+        "colorHex": "#FFFFFF",
+        "storage": "128GB",
+        "condition": "New",
+        "price": 899,
+        "stock": 22,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_plus_white_1a1863c098.png"]
+      },
+      {
+        "sku": "IP16PL-256-WHT-NEW",
+        "color": "White",
+        "colorHex": "#FFFFFF",
+        "storage": "256GB",
+        "condition": "New",
+        "price": 999,
+        "stock": 20,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_plus_white_1a1863c098.png"]
+      },
+      {
+        "sku": "IP16PL-512-WHT-NEW",
+        "color": "White",
+        "colorHex": "#FFFFFF",
+        "storage": "512GB",
+        "condition": "New",
+        "price": 1199,
+        "stock": 16,
+        "images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_16_plus_white_1a1863c098.png"]
+      }
+    ]
+  },
+  {
+    "model": "iPhone 17",
+    "series": "iPhone 17",
+    "type": "Standard",
+    "chip": "A19",
+    "display": "6.1-inch Super Retina XDR",
+    "camera": "48MP Fusion + 12MP Ultra Wide",
+    "description": "iPhone 17 with A19 chip and enhanced AI capabilities.",
+    "mainImage": "https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_lavender_1_607c4326aa.png",
+    "variants": [
+{
+"sku": "IP17-256-BLK-NEW",
+"color": "Black",
+"colorHex": "#000000",
+"storage": "256GB",
+"condition": "New",
+"price": 899,
+"stock": 30,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_black_1_d7f044aff6.png"]
+},
+{
+"sku": "IP17-512-BLK-NEW",
+"color": "Black",
+"colorHex": "#000000",
+"storage": "512GB",
+"condition": "New",
+"price": 1099,
+"stock": 25,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_black_1_d7f044aff6.png"]
+},
+{
+"sku": "IP17-256-WHT-NEW",
+"color": "White",
+"colorHex": "#FFFFFF",
+"storage": "256GB",
+"condition": "New",
+"price": 899,
+"stock": 28,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_white_1_394c4cd09a.png"]
+},
+{
+"sku": "IP17-512-WHT-NEW",
+"color": "White",
+"colorHex": "#FFFFFF",
+"storage": "512GB",
+"condition": "New",
+"price": 1099,
+"stock": 24,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_white_1_394c4cd09a.png"]
+},
+{
+"sku": "IP17-256-MBLUE-NEW",
+"color": "Mist Blue",
+"colorHex": "#A7BED3",
+"storage": "256GB",
+"condition": "New",
+"price": 899,
+"stock": 22,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_mist_blue_1_7f94d2b34c.png"]
+},
+{
+"sku": "IP17-512-MBLUE-NEW",
+"color": "Mist Blue",
+"colorHex": "#A7BED3",
+"storage": "512GB",
+"condition": "New",
+"price": 1099,
+"stock": 18,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_mist_blue_1_7f94d2b34c.png"]
+},
+{
+"sku": "IP17-256-LAV-NEW",
+"color": "Lavender",
+"colorHex": "#E6E6FA",
+"storage": "256GB",
+"condition": "New",
+"price": 899,
+"stock": 20,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_lavender_1_607c4326aa.png"]
+},
+{
+"sku": "IP17-512-LAV-NEW",
+"color": "Lavender",
+"colorHex": "#E6E6FA",
+"storage": "512GB",
+"condition": "New",
+"price": 1099,
+"stock": 16,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_lavender_1_607c4326aa.png"]
+},
+{
+"sku": "IP17-256-SAGE-NEW",
+"color": "Sage",
+"colorHex": "#BCB88A",
+"storage": "256GB",
+"condition": "New",
+"price": 899,
+"stock": 18,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_sage_1_9ad2ee5f43.png"]
+},
+{
+"sku": "IP17-512-SAGE-NEW",
+"color": "Sage",
+"colorHex": "#BCB88A",
+"storage": "512GB",
+"condition": "New",
+"price": 1099,
+"stock": 14,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_sage_1_9ad2ee5f43.png"]
+}
+]
+},
+{
+"model": "iPhone 17 Air",
+"series": "iPhone 17",
+"type": "Air",
+"chip": "A19",
+"display": "6.6-inch Super Retina XDR",
+"camera": "48MP Fusion Camera",
+"description": "iPhone 17 Air ultra-thin design with lightweight titanium frame.",
+"mainImage": "https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_sky_blue_1_b2a2ebc3ed.png",
+"variants": [
+{
+"sku": "IP17AIR-256-SBLUE-NEW",
+"color": "Sky Blue",
+"colorHex": "#87CEEB",
+"storage": "256GB",
+"condition": "New",
+"price": 899,
+"stock": 20,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_sky_blue_1_b2a2ebc3ed.png"]
+},
+{
+"sku": "IP17AIR-512-SBLUE-NEW",
+"color": "Sky Blue",
+"colorHex": "#87CEEB",
+"storage": "512GB",
+"condition": "New",
+"price": 1099,
+"stock": 16,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_sky_blue_1_b2a2ebc3ed.png"]
+},
+{
+"sku": "IP17AIR-256-GOLD-NEW",
+"color": "Gold",
+"colorHex": "#FFD700",
+"storage": "256GB",
+"condition": "New",
+"price": 899,
+"stock": 18,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_air_light_gold_1_2450491280.png"]
+},
+{
+"sku": "IP17AIR-512-GOLD-NEW",
+"color": "Gold",
+"colorHex": "#FFD700",
+"storage": "512GB",
+"condition": "New",
+"price": 1099,
+"stock": 14,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_air_light_gold_1_2450491280.png"]
+},
+{
+"sku": "IP17AIR-256-BLK-NEW",
+"color": "Black",
+"colorHex": "#000000",
+"storage": "256GB",
+"condition": "New",
+"price": 899,
+"stock": 22,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_air_space_black_1_e8d0e62b0b.png"]
+},
+{
+"sku": "IP17AIR-512-BLK-NEW",
+"color": "Black",
+"colorHex": "#000000",
+"storage": "512GB",
+"condition": "New",
+"price": 1099,
+"stock": 18,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_air_space_black_1_e8d0e62b0b.png"]
+},
+{
+"sku": "IP17AIR-256-WHT-NEW",
+"color": "White",
+"colorHex": "#FFFFFF",
+"storage": "256GB",
+"condition": "New",
+"price": 899,
+"stock": 20,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_air_cloud_white_1_1086b38f61.png"]
+},
+{
+"sku": "IP17AIR-512-WHT-NEW",
+"color": "White",
+"colorHex": "#FFFFFF",
+"storage": "512GB",
+"condition": "New",
+"price": 1099,
+"stock": 16,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_air_cloud_white_1_1086b38f61.png"]
+}
+]
+},
+{
+"model": "iPhone 17 Pro",
+"series": "iPhone 17",
+"type": "Pro",
+"chip": "A19 Pro",
+"display": "6.3-inch Super Retina XDR with ProMotion",
+"camera": "48MP Fusion + 48MP Ultra Wide + 12MP Telephoto (5x)",
+"description": "iPhone 17 Pro with A19 Pro chip and advanced camera system.",
+"mainImage": "https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_pro_cosmic_orange_1_12e8ea1358.png",
+"variants": [
+{
+"sku": "IP17PR-256-DKTI-NEW",
+"color": "Dark Titanium",
+"colorHex": "#2C2C2C",
+"storage": "256GB",
+"condition": "New",
+"price": 1099,
+"stock": 20,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_pro_deep_blue_1_4ba1759e35.png"]
+},
+{
+"sku": "IP17PR-512-DKTI-NEW",
+"color": "Dark Titanium",
+"colorHex": "#2C2C2C",
+"storage": "512GB",
+"condition": "New",
+"price": 1299,
+"stock": 16,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_pro_deep_blue_1_4ba1759e35.png"]
+},
+{
+"sku": "IP17PR-1TB-DKTI-NEW",
+"color": "Dark Titanium",
+"colorHex": "#2C2C2C",
+"storage": "1TB",
+"condition": "New",
+"price": 1499,
+"stock": 12,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_pro_deep_blue_1_4ba1759e35.png"]
+},
+{
+"sku": "IP17PR-256-SLTI-NEW",
+"color": "Silver Titanium",
+"colorHex": "#C0C0C0",
+"storage": "256GB",
+"condition": "New",
+"price": 1099,
+"stock": 18,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_pro_silver_1_4b28435ad7.png"]
+},
+{
+"sku": "IP17PR-512-SLTI-NEW",
+"color": "Silver Titanium",
+"colorHex": "#C0C0C0",
+"storage": "512GB",
+"condition": "New",
+"price": 1299,
+"stock": 15,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_pro_silver_1_4b28435ad7.png"]
+},
+{
+"sku": "IP17PR-1TB-SLTI-NEW",
+"color": "Silver Titanium",
+"colorHex": "#C0C0C0",
+"storage": "1TB",
+"condition": "New",
+"price": 1499,
+"stock": 10,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_pro_silver_1_4b28435ad7.png"]
+},
+{
+"sku": "IP17PR-256-NTI-NEW",
+"color": "Cosmic Orange",
+"colorHex": "#f88e4e",
+"storage": "256GB",
+"condition": "New",
+"price": 1099,
+"stock": 16,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_pro_cosmic_orange_1_12e8ea1358.png"]
+},
+{
+"sku": "IP17PR-512-NTI-NEW",
+"color": "Cosmic Orange",
+"colorHex": "#f88e4e",
+"storage": "512GB",
+"condition": "New",
+"price": 1299,
+"stock": 14,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_pro_cosmic_orange_1_12e8ea1358.png"]
+},
+{
+"sku": "IP17PR-1TB-NTI-NEW",
+"color": "Cosmic Orange",
+"colorHex": "#f88e4e",
+"storage": "1TB",
+"condition": "New",
+"price": 1499,
+"stock": 8,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_pro_cosmic_orange_1_12e8ea1358.png"]
+}
+]
+},
+{
+"model": "iPhone 17 Pro Max",
+"series": "iPhone 17",
+"type": "Pro Max",
+"chip": "A19 Pro",
+"display": "6.9-inch Super Retina XDR with ProMotion",
+"camera": "48MP Fusion + 48MP Ultra Wide + 12MP Periscope Telephoto (10x)",
+"description": "iPhone 17 Pro Max with largest display, best performance, and ultimate flagship experience.",
+"mainImage": "https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_pro_max_silver_1_7b25d56e26.png",
+"variants": [
+{
+"sku": "IP17PM-256-DKTI-NEW",
+"color": "Dark Titanium",
+"colorHex": "#2C2C2C",
+"storage": "256GB",
+"condition": "New",
+"price": 1199,
+"stock": 18,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_pro_max_deep_blue_1_eea0b1d2e9.png"]
+},
+{
+"sku": "IP17PM-512-DKTI-NEW",
+"color": "Dark Titanium",
+"colorHex": "#2C2C2C",
+"storage": "512GB",
+"condition": "New",
+"price": 1399,
+"stock": 15,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_pro_max_deep_blue_1_eea0b1d2e9.png"]
+},
+{
+"sku": "IP17PM-1TB-DKTI-NEW",
+"color": "Dark Titanium",
+"colorHex": "#2C2C2C",
+"storage": "1TB",
+"condition": "New",
+"price": 1699,
+"stock": 10,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_pro_max_deep_blue_1_eea0b1d2e9.png"]
+},
+{
+"sku": "IP17PM-256-SLTI-NEW",
+"color": "Silver Titanium",
+"colorHex": "#C0C0C0",
+"storage": "256GB",
+"condition": "New",
+"price": 1199,
+"stock": 16,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_pro_max_silver_1_7b25d56e26.png"]
+},
+{
+"sku": "IP17PM-512-SLTI-NEW",
+"color": "Silver Titanium",
+"colorHex": "#C0C0C0",
+"storage": "512GB",
+"condition": "New",
+"price": 1399,
+"stock": 14,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_pro_max_silver_1_7b25d56e26.png"]
+},
+{
+"sku": "IP17PM-1TB-SLTI-NEW",
+"color": "Silver Titanium",
+"colorHex": "#C0C0C0",
+"storage": "1TB",
+"condition": "New",
+"price": 1699,
+"stock": 8,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/750x0/filters:format(webp):quality(75)/iphone_17_pro_max_silver_1_7b25d56e26.png"]
+},
+{
+"sku": "IP17PM-256-NTI-NEW",
+"color": "Cosmic Orange",
+"colorHex": "#f88e4e",
+"storage": "256GB",
+"condition": "New",
+"price": 1199,
+"stock": 14,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/384x0/filters:format(webp):quality(75)/iphone_17_pro_max_cosmic_orange_1_a940b68476.png"]
+},
+{
+"sku": "IP17PM-512-NTI-NEW",
+"color": "Cosmic Orange",
+"colorHex": "#f88e4e",
+"storage": "512GB",
+"condition": "New",
+"price": 1399,
+"stock": 12,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/384x0/filters:format(webp):quality(75)/iphone_17_pro_max_cosmic_orange_1_a940b68476.png"]
+},
+{
+"sku": "IP17PM-1TB-NTI-NEW",
+"color": "Cosmic Orange",
+"colorHex": "#f88e4e",
+"storage": "1TB",
+"condition": "New",
+"price": 1699,
+"stock": 6,
+"images": ["https://cdn2.fptshop.com.vn/unsafe/384x0/filters:format(webp):quality(75)/iphone_17_pro_max_cosmic_orange_1_a940b68476.png"]
+}
+]
+}
+]

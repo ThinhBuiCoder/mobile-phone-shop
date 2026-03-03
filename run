@@ -1,0 +1,7 @@
+# Terminal 1 - Backend
+# cd PE/backend
+# npm run dev
+
+# Terminal 2 - Frontend  
+# cd PE/frontend
+# npx expo start --clear
