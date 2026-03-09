@@ -41,16 +41,50 @@ export interface CartItem {
   image: string;
 }
 
+export interface OrderItem {
+  productId: string;
+  variantSku: string;
+  model: string;
+  color: string;
+  storage: string;
+  condition: string;
+  quantity: number;
+  price: number;
+}
+
+export interface ShippingAddress {
+  fullName: string;
+  phone: string;
+  addressLine: string;
+  city: string;
+  note?: string;
+}
+
+export interface PaymentInfo {
+  method: 'cod' | 'bank_transfer' | 'card';
+  status: 'pending' | 'paid' | 'failed';
+  transactionId?: string;
+}
+
+export interface OrderStatusHistory {
+  status: 'pending' | 'paid' | 'processing' | 'shipped' | 'delivered' | 'cancelled';
+  changedAt: string;
+  note?: string;
+}
+
 export interface Order {
-  items: {
-    productId: string;
-    variantSku: string;
-    model: string;
-    color: string;
-    storage: string;
-    condition: string;
-    quantity: number;
-    price: number;
-  }[];
+  _id: string;
+  items: OrderItem[];
   totalAmount: number;
+  orderDate: string;
+  status: 'pending' | 'paid' | 'processing' | 'shipped' | 'delivered' | 'cancelled';
+  shippingAddress: ShippingAddress;
+  payment: PaymentInfo;
+  statusHistory: OrderStatusHistory[];
+}
+
+export interface RevenueResponse {
+  totalRevenue: number;
+  orderCount: number;
+  orders: Order[];
 }

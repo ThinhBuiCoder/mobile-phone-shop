@@ -1,10 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
+import { useRouter } from 'expo-router';
 import { orderAPI } from '../../services/api';
+import { RevenueResponse, Order } from '../../types';
+import { colors, radius, shadow, spacing, typography } from '../../theme';
+import { SegmentedControl } from '../../components/ui/SegmentedControl';
+
+const formatCurrency = (value: number) => `$${value.toLocaleString()}`;
+
+const formatDateTime = (isoDate: string) => {
+  const date = new Date(isoDate);
+  return date.toLocaleString();
+};
 
 export default function Revenue() {
+  const router = useRouter();
   const [period, setPeriod] = useState<'day' | 'month' | 'year'>('month');
-  const [revenue, setRevenue] = useState({ totalRevenue: 0, orderCount: 0 });
+  const [revenue, setRevenue] = useState<RevenueResponse>({
+    totalRevenue: 0,
+    orderCount: 0,
+    orders: [],
+  });
 
   useEffect(() => {
     loadRevenue();
@@ -13,52 +29,187 @@ export default function Revenue() {
   const loadRevenue = async () => {
     try {
       const date = new Date().toISOString();
-      const response = await orderAPI.getRevenue(period, date);
-      if (response && response.data) {
-        setRevenue(response.data);
+      const [revenueResponse, myOrdersResponse] = await Promise.all([
+        orderAPI.getRevenue(period, date),
+        orderAPI.getMyOrders(),
+      ]);
+
+      const myOrders = myOrdersResponse?.data ?? [];
+
+      if (revenueResponse?.data) {
+        setRevenue({
+          totalRevenue: revenueResponse.data.totalRevenue ?? 0,
+          orderCount: revenueResponse.data.orderCount ?? 0,
+          orders: myOrders,
+        });
       } else {
-        setRevenue({ totalRevenue: 0, orderCount: 0 });
+        setRevenue({ totalRevenue: 0, orderCount: 0, orders: myOrders });
       }
     } catch (error) {
       console.error('Load revenue error:', error);
-      setRevenue({ totalRevenue: 0, orderCount: 0 });
+      setRevenue({ totalRevenue: 0, orderCount: 0, orders: [] });
     }
   };
 
+  const handleOpenOrder = (orderId: string) => {
+    router.push(`/order/${orderId}`);
+  };
+
+  const renderOrderItem = ({ item }: { item: Order }) => (
+    <TouchableOpacity
+      activeOpacity={0.9}
+      style={styles.orderCard}
+      onPress={() => handleOpenOrder(item._id)}
+    >
+      <View style={styles.orderHeader}>
+        <Text style={styles.orderDate}>{formatDateTime(item.orderDate)}</Text>
+        <Text style={styles.orderTotal}>{formatCurrency(item.totalAmount)}</Text>
+      </View>
+      <Text style={styles.orderMeta}>{item.items.length} item(s) · {item.status.toUpperCase()}</Text>
+      <Text style={styles.orderAction}>Tap to view details</Text>
+    </TouchableOpacity>
+  );
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Revenue Statistics</Text>
-      <View style={styles.periodButtons}>
-        <TouchableOpacity style={[styles.periodButton, period === 'day' && styles.periodButtonActive]} onPress={() => setPeriod('day')}>
-          <Text style={styles.periodButtonText}>Day</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.periodButton, period === 'month' && styles.periodButtonActive]} onPress={() => setPeriod('month')}>
-          <Text style={styles.periodButtonText}>Month</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.periodButton, period === 'year' && styles.periodButtonActive]} onPress={() => setPeriod('year')}>
-          <Text style={styles.periodButtonText}>Year</Text>
-        </TouchableOpacity>
+    <View style={styles.screen}>
+      <View style={styles.header}>
+        <Text style={styles.title}>Revenue</Text>
+        <Text style={styles.subtitle}>Order history with shipping snapshot, payment and status timeline</Text>
       </View>
-      <View style={styles.statsCard}>
-        <Text style={styles.statsLabel}>Total Revenue</Text>
-        <Text style={styles.statsValue}>${revenue.totalRevenue.toLocaleString()}</Text>
+
+      <View style={styles.segmentWrapper}>
+        <SegmentedControl
+          options={[
+            { value: 'day' as const, label: 'Day' },
+            { value: 'month' as const, label: 'Month' },
+            { value: 'year' as const, label: 'Year' },
+          ]}
+          value={period}
+          onChange={setPeriod}
+        />
       </View>
-      <View style={styles.statsCard}>
-        <Text style={styles.statsLabel}>Total Orders</Text>
-        <Text style={styles.statsValue}>{revenue.orderCount}</Text>
+
+      <View style={styles.cardsRow}>
+        <View style={styles.statsCard}>
+          <Text style={styles.statsLabel}>Total revenue</Text>
+          <Text style={styles.statsValue}>{formatCurrency(revenue.totalRevenue)}</Text>
+          <Text style={styles.statsMeta}>Computed from paid and pending checkout records</Text>
+        </View>
       </View>
+
+      <View style={styles.cardsRow}>
+        <View style={styles.statsCard}>
+          <Text style={styles.statsLabel}>Orders in period</Text>
+          <Text style={styles.statsValue}>{revenue.orderCount}</Text>
+          <Text style={styles.statsMeta}>Number of orders in selected period</Text>
+        </View>
+      </View>
+
+      <Text style={styles.historyTitle}>My purchase history</Text>
+      <FlatList
+        data={revenue.orders}
+        keyExtractor={(item) => item._id}
+        renderItem={renderOrderItem}
+        contentContainerStyle={revenue.orders.length === 0 ? styles.emptyList : styles.historyList}
+        ListEmptyComponent={<Text style={styles.emptyText}>No orders yet.</Text>}
+      />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, backgroundColor: '#f5f5f5' },
-  title: { fontSize: 28, fontWeight: 'bold', marginBottom: 20 },
-  periodButtons: { flexDirection: 'row', gap: 10, marginBottom: 30 },
-  periodButton: { flex: 1, padding: 15, borderRadius: 8, backgroundColor: '#e0e0e0', alignItems: 'center' },
-  periodButtonActive: { backgroundColor: '#007AFF' },
-  periodButtonText: { color: '#000', fontWeight: 'bold', fontSize: 16 },
-  statsCard: { backgroundColor: '#fff', padding: 20, borderRadius: 8, marginBottom: 15, elevation: 2 },
-  statsLabel: { fontSize: 16, color: '#666', marginBottom: 8 },
-  statsValue: { fontSize: 32, fontWeight: 'bold', color: '#007AFF' },
+  screen: {
+    flex: 1,
+    paddingHorizontal: spacing.lg,
+    paddingTop: spacing.lg,
+    backgroundColor: colors.background,
+  },
+  header: {
+    marginBottom: spacing.lg,
+  },
+  title: {
+    ...typography.screenTitle,
+    color: colors.textPrimary,
+    marginBottom: spacing.xs,
+  },
+  subtitle: {
+    ...typography.body,
+    color: colors.textSecondary,
+  },
+  segmentWrapper: {
+    marginBottom: spacing.lg,
+  },
+  cardsRow: {
+    marginBottom: spacing.lg,
+  },
+  statsCard: {
+    backgroundColor: colors.card,
+    borderRadius: radius.lg,
+    padding: spacing.lg,
+    ...shadow.card,
+  },
+  statsLabel: {
+    ...typography.caption,
+    color: colors.textSecondary,
+    marginBottom: spacing.xs,
+  },
+  statsValue: {
+    fontSize: 28,
+    fontWeight: '700',
+    color: colors.accentBlue,
+    marginBottom: spacing.sm,
+  },
+  statsMeta: {
+    ...typography.caption,
+    color: colors.textSecondary,
+  },
+  historyTitle: {
+    ...typography.sectionTitle,
+    color: colors.textPrimary,
+    marginBottom: spacing.sm,
+  },
+  historyList: {
+    paddingBottom: spacing.xl,
+  },
+  emptyList: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  emptyText: {
+    ...typography.body,
+    color: colors.textSecondary,
+  },
+  orderCard: {
+    backgroundColor: colors.card,
+    borderRadius: radius.lg,
+    padding: spacing.md,
+    marginBottom: spacing.sm,
+    ...shadow.card,
+  },
+  orderHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: spacing.xs,
+  },
+  orderDate: {
+    ...typography.body,
+    color: colors.textPrimary,
+    flex: 1,
+    marginRight: spacing.md,
+  },
+  orderTotal: {
+    ...typography.price,
+    color: colors.accentBlue,
+  },
+  orderMeta: {
+    ...typography.caption,
+    color: colors.textSecondary,
+  },
+  orderAction: {
+    ...typography.caption,
+    color: colors.accentBlue,
+    marginTop: spacing.xs,
+  },
 });
