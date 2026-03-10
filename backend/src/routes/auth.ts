@@ -5,9 +5,28 @@ import User from '../models/User.js';
 
 const router = express.Router();
 
+const isValidEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+const isStrongPassword = (password: string) => password.length >= 8;
+
 router.post('/register', async (req, res) => {
   try {
-    const { fullName, email, password } = req.body;
+    const fullName = String(req.body?.fullName ?? '').trim();
+    const email = String(req.body?.email ?? '').trim().toLowerCase();
+    const password = String(req.body?.password ?? '');
+
+    if (!fullName || !email || !password) {
+      return res.status(400).json({ message: 'Please fill all fields' });
+    }
+
+    if (!isValidEmail(email)) {
+      return res.status(400).json({ message: 'Invalid email format' });
+    }
+
+    if (!isStrongPassword(password)) {
+      return res.status(400).json({
+        message: 'Password must be at least 8 characters',
+      });
+    }
     
     const existingUser = await User.findOne({ email });
     if (existingUser) {
@@ -20,13 +39,22 @@ router.post('/register', async (req, res) => {
 
     res.status(201).json({ message: 'User registered successfully' });
   } catch (error) {
+    // Handle duplicate key error (race condition)
+    if ((error as any)?.code === 11000) {
+      return res.status(400).json({ message: 'Email already exists' });
+    }
     res.status(500).json({ message: 'Server error' });
   }
 });
 
 router.post('/login', async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const email = String(req.body?.email ?? '').trim().toLowerCase();
+    const password = String(req.body?.password ?? '');
+
+    if (!email || !password) {
+      return res.status(400).json({ message: 'Invalid credentials' });
+    }
     
     const user = await User.findOne({ email });
     if (!user) {

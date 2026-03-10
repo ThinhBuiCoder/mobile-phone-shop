@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, Alert, Image, TextInput } from 'react-native';
 import { useCart } from '../../contexts/CartContext';
-import { orderAPI } from '../../services/api';
+import { getApiErrorMessageByStatus, orderAPI } from '../../services/api';
 import { colors, radius, shadow, spacing, typography } from '../../theme';
 import { SuccessModal } from '../../components/ui/SuccessModal';
 import { AppToast } from '../../components/ui/AppToast';
@@ -67,14 +67,16 @@ export default function Cart() {
       setShowSuccessModal(true);
       setNote('');
     } catch (error: any) {
-      const status = error?.response?.status;
-      if (status === 401) {
-        showErrorToast('Authentication expired. Please sign in again.');
-      } else if (status === 409) {
-        showErrorToast(error?.response?.data?.message || 'Some products are out of stock.');
-      } else {
-        showErrorToast(error?.response?.data?.message || 'Network error. Checkout failed.');
-      }
+      showErrorToast(
+        getApiErrorMessageByStatus(
+          error,
+          {
+            401: 'Authentication expired. Please sign in again.',
+            409: 'Some products are out of stock.',
+          },
+          'Network error. Checkout failed.'
+        )
+      );
     }
   };
 

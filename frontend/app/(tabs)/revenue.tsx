@@ -34,12 +34,13 @@ export default function Revenue() {
         orderAPI.getMyOrders(),
       ]);
 
-      const myOrders = myOrdersResponse?.data ?? [];
+      const myOrders = Array.isArray(myOrdersResponse?.data) ? myOrdersResponse.data : [];
+      const revenueData = revenueResponse?.data as Partial<RevenueResponse> | null;
 
-      if (revenueResponse?.data) {
+      if (revenueData) {
         setRevenue({
-          totalRevenue: revenueResponse.data.totalRevenue ?? 0,
-          orderCount: revenueResponse.data.orderCount ?? 0,
+          totalRevenue: revenueData.totalRevenue ?? 0,
+          orderCount: revenueData.orderCount ?? 0,
           orders: myOrders,
         });
       } else {

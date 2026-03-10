@@ -1,15 +1,16 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { View, Text, StyleSheet, FlatList, ActivityIndicator, TouchableOpacity } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { orderAPI } from '../../services/api';
+import { getApiErrorMessage, orderAPI } from '../../services/api';
 import { Order, OrderItem, OrderStatusHistory } from '../../types';
 import { colors, radius, shadow, spacing, typography } from '../../theme';
 
 const formatCurrency = (value: number) => `$${value.toLocaleString()}`;
 
-const formatDateTime = (isoDate: string) => {
+const formatDateTime = (isoDate?: string) => {
+  if (!isoDate) return 'N/A';
   const date = new Date(isoDate);
-  return date.toLocaleString();
+  return Number.isNaN(date.getTime()) ? 'N/A' : date.toLocaleString();
 };
 
 export default function OrderDetail() {
@@ -31,13 +32,14 @@ export default function OrderDetail() {
 
     try {
       const response = await orderAPI.getById(id);
-      if (response?.data) {
-        setOrder(response.data as Order);
+      const orderData = response?.data as Order | null;
+      if (orderData) {
+        setOrder(orderData);
       } else {
         setError('Order not found');
       }
     } catch (e: any) {
-      setError(e?.response?.data?.message || 'Failed to load order details');
+      setError(getApiErrorMessage(e, 'Failed to load order details'));
     } finally {
       setLoading(false);
     }
@@ -45,8 +47,13 @@ export default function OrderDetail() {
 
   const itemCount = useMemo(() => {
     if (!order) return 0;
-    return order.items.reduce((sum, item) => sum + item.quantity, 0);
+    return (order.items || []).reduce((sum, item) => sum + item.quantity, 0);
   }, [order]);
+
+  const shippingAddress = order?.shippingAddress;
+  const payment = order?.payment;
+  const statusHistory = order?.statusHistory || [];
+  const orderItems = order?.items || [];
 
   const renderItem = ({ item }: { item: OrderItem }) => {
     const lineTotal = item.price * item.quantity;
@@ -80,9 +87,9 @@ export default function OrderDetail() {
 
   const renderStatusItem = ({ item }: { item: OrderStatusHistory }) => (
     <View style={styles.statusItem}>
-      <Text style={styles.statusTitle}>{item.status.toUpperCase()}</Text>
-      <Text style={styles.statusDate}>{formatDateTime(item.changedAt)}</Text>
-      {!!item.note && <Text style={styles.statusNote}>{item.note}</Text>}
+      <Text style={styles.statusTitle}>{item?.status ? item.status.toUpperCase() : 'UNKNOWN'}</Text>
+      <Text style={styles.statusDate}>{formatDateTime(item?.changedAt)}</Text>
+      {!!item?.note && <Text style={styles.statusNote}>{item.note}</Text>}
     </View>
   );
 
@@ -129,20 +136,32 @@ export default function OrderDetail() {
 
         <View style={styles.metaCard}>
           <Text style={styles.metaLabel}>Current status</Text>
-          <Text style={styles.metaValue}>{order.status.toUpperCase()}</Text>
+          <Text style={styles.metaValue}>{order?.status ? order.status.toUpperCase() : 'UNKNOWN'}</Text>
         </View>
 
         <View style={styles.metaCard}>
           <Text style={styles.metaLabel}>Shipping snapshot</Text>
-          <Text style={styles.metaValue}>{order.shippingAddress.fullName} · {order.shippingAddress.phone}</Text>
-          <Text style={styles.metaSubValue}>{order.shippingAddress.addressLine}, {order.shippingAddress.city}</Text>
-          {!!order.shippingAddress.note && <Text style={styles.metaSubValue}>Note: {order.shippingAddress.note}</Text>}
+          {shippingAddress ? (
+            <>
+              <Text style={styles.metaValue}>{shippingAddress.fullName} · {shippingAddress.phone}</Text>
+              <Text style={styles.metaSubValue}>{shippingAddress.addressLine}, {shippingAddress.city}</Text>
+              {!!shippingAddress.note && <Text style={styles.metaSubValue}>Note: {shippingAddress.note}</Text>}
+            </>
+          ) : (
+            <Text style={styles.metaSubValue}>No shipping information</Text>
+          )}
         </View>
 
         <View style={styles.metaCard}>
           <Text style={styles.metaLabel}>Payment</Text>
-          <Text style={styles.metaValue}>{order.payment.method.toUpperCase()} · {order.payment.status.toUpperCase()}</Text>
-          {!!order.payment.transactionId && <Text style={styles.metaSubValue}>Txn: {order.payment.transactionId}</Text>}
+          {payment ? (
+            <>
+              <Text style={styles.metaValue}>{payment.method ? payment.method.toUpperCase() : 'UNKNOWN'} · {payment.status ? payment.status.toUpperCase() : 'UNKNOWN'}</Text>
+              {!!payment.transactionId && <Text style={styles.metaSubValue}>Txn: {payment.transactionId}</Text>}
+            </>
+          ) : (
+            <Text style={styles.metaSubValue}>No payment information</Text>
+          )}
         </View>
 
         <View style={styles.totalStrip}>
@@ -153,20 +172,22 @@ export default function OrderDetail() {
 
       <Text style={styles.sectionTitle}>Status timeline</Text>
       <FlatList
-        data={order.statusHistory}
+        data={statusHistory}
         keyExtractor={(_, index) => `status-${index}`}
         renderItem={renderStatusItem}
         contentContainerStyle={styles.statusList}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
+        ListEmptyComponent={<Text style={styles.emptyText}>No status history available</Text>}
       />
 
       <Text style={styles.sectionTitle}>Products in this order</Text>
       <FlatList
-        data={order.items}
-        keyExtractor={(item) => item.variantSku}
+        data={orderItems}
+        keyExtractor={(item, index) => item.variantSku || `${item.productId}-${index}`}
         renderItem={renderItem}
         contentContainerStyle={styles.list}
         ItemSeparatorComponent={() => <View style={styles.separator} />}
+        ListEmptyComponent={<Text style={styles.emptyText}>No items in this order</Text>}
       />
     </View>
   );
@@ -190,6 +211,12 @@ const styles = StyleSheet.create({
     ...typography.body,
     color: colors.error,
     textAlign: 'center',
+  },
+  emptyText: {
+    ...typography.caption,
+    color: colors.textSecondary,
+    textAlign: 'center',
+    paddingVertical: spacing.sm,
   },
   backButton: {
     alignSelf: 'flex-start',

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, ScrollView, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { productAPI } from '../../services/api';
+import { getApiErrorMessageByStatus, productAPI } from '../../services/api';
 import { Product, Variant } from '../../types';
 import { useCart } from '../../contexts/CartContext';
+import { ConfirmModal } from '../../components/ui/ConfirmModal';
 
 export default function ProductDetail() {
   const { id } = useLocalSearchParams();
@@ -11,8 +12,14 @@ export default function ProductDetail() {
   const [selectedVariant, setSelectedVariant] = useState<Variant | null>(null);
   const [selectedColor, setSelectedColor] = useState<string>('');
   const [selectedStorage, setSelectedStorage] = useState<string>('');
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
   const { addToCart } = useCart();
   const router = useRouter();
+
+  const navigateBack = () => {
+    router.replace('/(tabs)');
+  };
 
   useEffect(() => {
     loadProduct();
@@ -70,24 +77,36 @@ export default function ProductDetail() {
     Alert.alert('Success', 'Added to cart');
   };
 
-  const handleDelete = async () => {
-    Alert.alert('Confirm', 'Delete this product?', [
-      { text: 'Cancel', style: 'cancel' },
-      {
-        text: 'Delete',
-        style: 'destructive',
-        onPress: async () => {
-          try {
-            await productAPI.delete(id as string);
-            Alert.alert('Success', 'Product deleted', [
-              { text: 'OK', onPress: () => router.back() }
-            ]);
-          } catch (error) {
-            Alert.alert('Error', 'Failed to delete product');
-          }
-        },
-      },
-    ]);
+  const handleDelete = () => {
+    setShowDeleteModal(true);
+  };
+
+  const handleEdit = () => {
+    router.push(`/product/edit/${id}`);
+  };
+
+  const confirmDelete = async () => {
+    try {
+      setIsDeleting(true);
+      await productAPI.delete(id as string);
+      setShowDeleteModal(false);
+      Alert.alert('Success', 'Product deleted');
+      navigateBack();
+    } catch (error: any) {
+      if (error?.response?.status === 401) {
+        setShowDeleteModal(false);
+        Alert.alert('Login session has expired.');
+        router.replace('/(auth)/login');
+        return;
+      }
+
+      Alert.alert(
+        'Error',
+        getApiErrorMessageByStatus(error, {}, 'Failed to delete product')
+      );
+    } finally {
+      setIsDeleting(false);
+    }
   };
 
   if (!product || !selectedVariant) return <Text style={styles.loading}>Loading...</Text>;
@@ -99,9 +118,10 @@ export default function ProductDetail() {
 
   return (
     <ScrollView style={styles.container}>
-      <Image 
-        source={{ uri: selectedVariant.images[0] || product.mainImage }} 
-        style={styles.image} 
+      <Image
+        source={{ uri: selectedVariant.images[0] || product.mainImage }}
+        style={styles.image}
+        resizeMode="contain"
       />
       
       <View style={styles.infoSection}>
@@ -173,13 +193,28 @@ export default function ProductDetail() {
         </Text>
       </TouchableOpacity>
 
+      <TouchableOpacity style={styles.editButton} onPress={handleEdit}>
+        <Text style={styles.editButtonText}>Edit Product</Text>
+      </TouchableOpacity>
+
       <TouchableOpacity style={styles.deleteButton} onPress={handleDelete}>
         <Text style={styles.deleteButtonText}>Delete Product</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.backButton} onPress={() => router.back()}>
+      <TouchableOpacity style={styles.backButton} onPress={navigateBack}>
         <Text style={styles.backButtonText}>Back to List</Text>
       </TouchableOpacity>
+
+      <ConfirmModal
+        visible={showDeleteModal}
+        title="Delete product?"
+        message="This action cannot be undone."
+        cancelLabel="Cancel"
+        confirmLabel="Delete"
+        loading={isDeleting}
+        onCancel={() => setShowDeleteModal(false)}
+        onConfirm={confirmDelete}
+      />
     </ScrollView>
   );
 }
@@ -212,6 +247,8 @@ const styles = StyleSheet.create({
   addButton: { backgroundColor: '#007AFF', padding: 18, margin: 20, borderRadius: 8, alignItems: 'center' },
   addButtonDisabled: { backgroundColor: '#ccc' },
   addButtonText: { color: '#fff', fontSize: 18, fontWeight: 'bold' },
+  editButton: { backgroundColor: '#17a2b8', padding: 15, marginHorizontal: 20, borderRadius: 8, alignItems: 'center', marginBottom: 10 },
+  editButtonText: { color: '#fff', fontSize: 16, fontWeight: 'bold' },
   deleteButton: { backgroundColor: '#dc3545', padding: 15, marginHorizontal: 20, borderRadius: 8, alignItems: 'center', marginBottom: 10 },
   deleteButtonText: { color: '#fff', fontSize: 16, fontWeight: 'bold' },
   backButton: { backgroundColor: '#6c757d', padding: 15, marginHorizontal: 20, borderRadius: 8, alignItems: 'center', marginBottom: 30 },

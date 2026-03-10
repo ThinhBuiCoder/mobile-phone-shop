@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { Product } from '../types';
 import { useRouter } from 'expo-router';
+import { colors, radius, shadow, spacing, typography } from '../theme';
 
 interface ProductCardProps {
   product: Product;
@@ -17,21 +18,57 @@ export default function ProductCard({ product }: ProductCardProps) {
     <TouchableOpacity 
       style={styles.card}
       onPress={() => router.push(`/product/${product._id}`)}
+      activeOpacity={0.9}
     >
-      <Image source={{ uri: product.mainImage }} style={styles.image} />
-      <Text style={styles.model}>{product.model}</Text>
-      <Text style={styles.series}>{product.series} - {product.type}</Text>
-      <Text style={styles.variants}>{product.variants.length} variants</Text>
-      <Text style={styles.price}>{priceDisplay}</Text>
+      <View style={styles.imageWrapper}>
+        <Image source={{ uri: product.mainImage }} style={styles.image} resizeMode="contain" />
+      </View>
+      <View style={styles.info}>
+        <Text style={styles.model}>{product.model}</Text>
+        <Text style={styles.series}>{product.series} · {product.type}</Text>
+        <Text style={styles.variants}>{product.variants.length} variants</Text>
+        <Text style={styles.price}>{priceDisplay}</Text>
+      </View>
     </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
-  card: { backgroundColor: '#fff', borderRadius: 8, padding: 12, margin: 8, elevation: 2, width: '45%' },
-  image: { width: '100%', height: 180, borderRadius: 8, marginBottom: 8 },
-  model: { fontSize: 16, fontWeight: 'bold', marginBottom: 4 },
-  series: { fontSize: 13, color: '#666', marginBottom: 2 },
-  variants: { fontSize: 12, color: '#888', marginBottom: 8 },
-  price: { fontSize: 18, fontWeight: 'bold', color: '#007AFF' },
+  card: {
+    backgroundColor: colors.card,
+    borderRadius: radius.lg,
+    margin: spacing.sm,
+    padding: spacing.md,
+    width: '47%',
+    ...shadow.card,
+  },
+  imageWrapper: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: spacing.md,
+  },
+  image: {
+    width: '100%',
+    aspectRatio: 3 / 4,
+  },
+  info: {
+    gap: spacing.xs,
+  },
+  model: {
+    ...typography.productName,
+    color: colors.textPrimary,
+  },
+  series: {
+    ...typography.caption,
+    color: colors.textSecondary,
+  },
+  variants: {
+    ...typography.caption,
+    color: colors.textSecondary,
+  },
+  price: {
+    ...typography.price,
+    color: colors.accentBlue,
+    marginTop: spacing.xs,
+  },
 });

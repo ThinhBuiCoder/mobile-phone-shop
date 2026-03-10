@@ -50,6 +50,24 @@ const safeResponse = (response: any) => {
   return null;
 };
 
+export const getApiErrorMessage = (error: any, fallbackMessage = 'Something went wrong') => {
+  const message = error?.response?.data?.message;
+  if (typeof message === 'string' && message.trim().length > 0) {
+    return message;
+  }
+  return fallbackMessage;
+};
+
+export const getApiErrorMessageByStatus = (
+  error: any,
+  statusFallbackMap: Record<number, string>,
+  defaultFallback = 'Something went wrong'
+) => {
+  const status = error?.response?.status;
+  const fallback = typeof status === 'number' ? (statusFallbackMap[status] ?? defaultFallback) : defaultFallback;
+  return getApiErrorMessage(error, fallback);
+};
+
 api.interceptors.response.use(
   (response) => {
     console.log('API Response:', response.config.method?.toUpperCase(), response.config.url, response.status);

@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useAuth } from '../../contexts/AuthContext';
+import { colors, radius, spacing, typography, shadow } from '../../theme';
+import { InputField } from '../../components/ui/InputField';
+import { PrimaryButton } from '../../components/ui/PrimaryButton';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -39,8 +42,8 @@ export default function Login() {
     if (!password) {
       setPasswordError('Password is required');
       hasError = true;
-    } else if (password.length < 6) {
-      setPasswordError('Password must be at least 6 characters');
+    } else if (password.length < 8) {
+      setPasswordError('Password must be at least 8 characters');
       hasError = true;
     }
     
@@ -52,85 +55,127 @@ export default function Login() {
       await login(email, password, rememberMe);
       router.replace('/(tabs)');
     } catch (error: any) {
-      console.error('Login error:', error);
-      
-      let errorMessage = 'Login failed';
-      
-      if (error.response) {
-        if (error.response.data && error.response.data.message) {
-          errorMessage = error.response.data.message;
-        } else if (error.response.data) {
-          errorMessage = typeof error.response.data === 'string' ? error.response.data : 'Login failed';
-        } else {
-          errorMessage = `Server error (${error.response.status})`;
-        }
-      } else if (error.request) {
-        errorMessage = 'Network error - please check your connection';
-      } else {
-        errorMessage = error.message || 'An unexpected error occurred';
-      }
-      
-      setLoginError(errorMessage);
+      setLoginError(error?.message || 'Invalid email or password');
     }
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Login</Text>
-      
-      <TextInput 
-        style={[styles.input, emailError ? styles.inputError : null]} 
-        placeholder="Email" 
-        value={email} 
-        onChangeText={(text) => {
-          setEmail(text);
-          if (emailError) setEmailError('');
-        }} 
-        keyboardType="email-address" 
-        autoCapitalize="none" 
-      />
-      {emailError ? <Text style={styles.errorText}>{emailError}</Text> : null}
-      
-      <TextInput 
-        style={[styles.input, passwordError ? styles.inputError : null]} 
-        placeholder="Password" 
-        value={password} 
-        onChangeText={(text) => {
-          setPassword(text);
-          if (passwordError) setPasswordError('');
-        }} 
-        secureTextEntry 
-      />
-      {passwordError ? <Text style={styles.errorText}>{passwordError}</Text> : null}
-      
-      {loginError ? <Text style={styles.loginErrorText}>{loginError}</Text> : null}
-      
-      <TouchableOpacity style={styles.checkboxContainer} onPress={() => setRememberMe(!rememberMe)}>
-        <View style={[styles.checkbox, rememberMe && styles.checkboxChecked]} />
-        <Text style={styles.checkboxLabel}>Remember Me</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={handleLogin}>
-        <Text style={styles.buttonText}>Login</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => router.push('/(auth)/register')}>
-        <Text style={styles.link}>Don't have an account? Register</Text>
-      </TouchableOpacity>
+    <View style={styles.screen}>
+      <View style={styles.card}>
+        <Text style={styles.title}>Sign in</Text>
+        <Text style={styles.subtitle}>Continue to your premium iPhone store</Text>
+
+        <View style={styles.form}>
+          <InputField
+            placeholder="Email"
+            keyboardType="email-address"
+            autoCapitalize="none"
+            value={email}
+            onChangeText={(text) => {
+              setEmail(text);
+              if (emailError) setEmailError('');
+            }}
+            error={emailError}
+          />
+
+          <InputField
+            placeholder="Password"
+            secureTextEntry
+            value={password}
+            onChangeText={(text) => {
+              setPassword(text);
+              if (passwordError) setPasswordError('');
+            }}
+            error={passwordError}
+          />
+
+          {loginError ? <Text style={styles.loginErrorText}>{loginError}</Text> : null}
+
+          <TouchableOpacity
+            style={styles.checkboxRow}
+            activeOpacity={0.8}
+            onPress={() => setRememberMe(!rememberMe)}
+          >
+            <View style={[styles.checkbox, rememberMe && styles.checkboxChecked]} />
+            <Text style={styles.checkboxLabel}>Remember me</Text>
+          </TouchableOpacity>
+
+          <PrimaryButton label="Sign in" onPress={handleLogin} />
+        </View>
+
+        <TouchableOpacity onPress={() => router.push('/(auth)/register')}>
+          <Text style={styles.linkText}>
+            Don&apos;t have an account? <Text style={styles.linkAccent}>Sign up</Text>
+          </Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center', padding: 20, backgroundColor: '#f5f5f5' },
-  title: { fontSize: 32, fontWeight: 'bold', marginBottom: 30, textAlign: 'center' },
-  input: { backgroundColor: '#fff', padding: 15, borderRadius: 8, marginBottom: 15, fontSize: 16 },
-  inputError: { borderColor: '#dc3545', borderWidth: 1 },
-  errorText: { color: '#dc3545', fontSize: 14, marginBottom: 10, marginLeft: 5 },
-  loginErrorText: { color: '#dc3545', fontSize: 16, textAlign: 'center', marginBottom: 15, fontWeight: '500' },
-  checkboxContainer: { flexDirection: 'row', alignItems: 'center', marginBottom: 20 },
-  checkbox: { width: 24, height: 24, borderWidth: 2, borderColor: '#007AFF', borderRadius: 4, marginRight: 10 },
-  checkboxChecked: { backgroundColor: '#007AFF' },
-  checkboxLabel: { fontSize: 16 },
-  button: { backgroundColor: '#007AFF', padding: 15, borderRadius: 8, alignItems: 'center', marginTop: 10 },
-  buttonText: { color: '#fff', fontSize: 18, fontWeight: 'bold' },
-  link: { color: '#007AFF', textAlign: 'center', marginTop: 20, fontSize: 16 },
+  screen: {
+    flex: 1,
+    backgroundColor: colors.background,
+    paddingHorizontal: spacing.xl,
+    justifyContent: 'center',
+  },
+  card: {
+    backgroundColor: colors.card,
+    borderRadius: radius.lg,
+    padding: spacing.xl,
+    ...shadow.card,
+  },
+  title: {
+    ...typography.screenTitle,
+    color: colors.textPrimary,
+    marginBottom: spacing.sm,
+    textAlign: 'center',
+  },
+  subtitle: {
+    ...typography.body,
+    color: colors.textSecondary,
+    textAlign: 'center',
+    marginBottom: spacing.xl,
+  },
+  form: {
+    marginBottom: spacing.lg,
+  },
+  loginErrorText: {
+    ...typography.body,
+    color: colors.error,
+    textAlign: 'center',
+    marginBottom: spacing.lg,
+  },
+  checkboxRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: spacing.lg,
+  },
+  checkbox: {
+    width: 18,
+    height: 18,
+    borderRadius: radius.sm,
+    borderWidth: 1.5,
+    borderColor: colors.border,
+    marginRight: spacing.sm,
+    backgroundColor: colors.card,
+  },
+  checkboxChecked: {
+    backgroundColor: colors.accentBlue,
+    borderColor: colors.accentBlue,
+  },
+  checkboxLabel: {
+    ...typography.body,
+    color: colors.textSecondary,
+  },
+  linkText: {
+    ...typography.body,
+    color: colors.textSecondary,
+    textAlign: 'center',
+  },
+  linkAccent: {
+    color: colors.accentBlue,
+    fontWeight: '600',
+  },
 });
